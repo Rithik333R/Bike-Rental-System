@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4285f4;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #357ae8;
+}
+
+.guest-mode {
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.learn-more {
+    text-decoration: none;
+    color: #4285f4;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Existing CSS styles remain the same */
+
+.success-message {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Show success message when the form is submitted */
+form:valid .success-message {
+    display: block;
+}

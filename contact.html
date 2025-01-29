@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact_s.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">Gottigere, KA12</div>
+          <div class="text-two">Meranagar 06</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+91 9898 9898</div>
+          <div class="text-two">+91 6969 6969</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">hehehe@gmail.com</div>
+          <div class="text-two">info.hehehe@gmail.com</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>If you have any work from me or any types of queries related to my tutorial, you can send me a message from here. It's my pleasure to help you.</p>
+        <form id="contactForm" method="post" action="store_contact_details.php">
+          <div class="input-box">
+              <input type="text" name="name" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+              <input type="email" name="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box message-box">
+              <textarea name="message" id="message" placeholder="Enter your message" required></textarea>
+          </div>
+          <div class="button">
+              <input type="submit" value="Send Now">
+          </div>
+      </form>      
+      </div>
+    </div>
+  </div>
+</body>
+</html>

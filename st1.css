@@ -1,0 +1,110 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6347;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Aligning the buttons to the center */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 10px 20px; /* Adding padding to create button-like appearance */
+    border-radius: 5px; /* Adding border-radius for rounded corners */
+    border: 2px solid transparent; /* Adding transparent border to create space for 3D effect */
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: #ff6347; /* Eye-catching color on hover */
+    border-color: #ff6347; /* Border color change on hover for 3D effect */
+}
+
+nav ul li a.active {
+    background-color: #ff6347; /* Active state color */
+    border-color: #ff6347; /* Border color for active state */
+}
+
+nav ul li a:focus {
+    outline: none; /* Removing focus outline */
+}
+
+main {
+    padding: 20px;
+}
+
+.banner {
+    
+    background-size: cover;
+    background-position: center;
+    color: #f84403;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.banner h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 18px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Stylish Buttons with 3D Effects */
+button, input[type="submit"] {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #cc4d38;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}

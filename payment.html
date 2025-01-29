@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .rent-amount {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .payment-button {
+            background-color: #1a73e8;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-button:hover {
+            background-color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Payment</h1>
+        <div class="rent-amount">
+            <p>Your total rent amount is:</p>
+            <p>$<span id="rentAmount">0.00</span></p>
+        </div>
+        <button class="payment-button" id="payNowButton">Pay Now</button>
+    </div>
+
+    <script>
+        // Retrieve rent amount from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const rentAmount = urlParams.get('rent');
+
+        // Update rent amount in the payment interface
+        document.getElementById('rentAmount').innerText = rentAmount;
+
+        // Add event listener to Pay Now button for redirection
+        document.getElementById('payNowButton').addEventListener('click', function() {
+            // Redirect to payment_confirmation.html when the button is clicked
+            window.location.href = 'p1.html';
+        });
+    </script>
+</body>
+</html>

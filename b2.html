@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rental</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1d1d1d;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .table-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .table-row {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .table-cell {
+            flex: 1;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            max-width: calc(33.33% - 40px);
+        }
+
+        .table-cell:hover {
+            transform: scale(1.05); /* 3D zoom effect on hover */
+        }
+
+        .table-cell img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .table-cell h2 {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .rental-info {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        input[type="date"],
+        input[type="time"] {
+            width: calc(50% - 5px);
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            background-color: #444;
+            border: 1px solid #666;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        input[type="date"]:focus,
+        input[type="time"]:focus {
+            outline: none;
+            border: 1px solid #ffb37b;
+        }
+
+        .calculate-rent-button {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .calculate-rent-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .rented-price-button {
+            background-color: #1a73e8; /* Adjust color as needed */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .rented-price-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <!-- First Row -->
+        <div class="table-row">
+            <div class="table-cell">
+                <div class="bike-info">
+                    <img src="mt15.png" alt="Bike 1">
+                    <h2>Yamaha MT15</h2>
+                    <ul>
+                        <li>Rental Price: $20/hour</li>
+                        <li>Top Speed: 150 Kmph</li>
+                        <li>Engine Capacity: 155 cc</li>
+                        <li>Mileage: 48 kmpl</li>
+                        <li>Transmission: 6 Speed Manual</li>
+                    </ul>
+                </div>
+                <div class="rental-info">
+                    <form id="rentForm1"class="rent-form" method="post" action="process_rental2.php">
+                        <label for="bikename">Name of Bike:</label>
+                        <input type="text" id="bike_name" name="bike_name">
+                        <label for="fromDate1">From:</label>
+                        <input type="date" id="fromDate1" name="fromDate">
+                        <input type="time" id="startTime1" name="startTime" placeholder="Start Time">
+                        <label for="toDate1">To:</label>
+                        <input type="date" id="toDate1" name="toDate">
+                        <input type="time" id="endTime1" name="endTime" placeholder="End Time">
+                        <input type="button" value="Calculate Rent" class="calculate-rent-button" onclick="calculateRent('fromDate1', 'toDate1', 'startTime1', 'endTime1', 20)">
+                    </form>
+                </div>
+            </div>
+
+            <div class="table-cell">
+                <div class="bike-info">
+                    <img src="r15v4image.png" alt="Bike 2">
+                    <h2>Yamaha R15 V4</h2>
+                    <ul>
+                        <li>Rental Price: $25/hour</li>
+                        <li>Top Speed: 150 Kmph</li>
+                        <li>Engine Capacity: 155 cc</li>
+                        <li>Mileage: 51.4 kmpl</li>
+                        <li>Transmission: 6 Speed Manual</li>
+                    </ul>
+                </div>
+                <div class="rental-info">
+                    <form id="rentForm1"class="rent-form" method="post" action="process_rental2.php">
+                        <label for="bikename">Name of Bike:</label>
+                        <input type="text" id="bike_name" name="bike_name">
+                        <label for="fromDate2">From:</label>
+                        <input type="date" id="fromDate2" name="fromDate">
+                        <input type="time" id="startTime2" name="startTime" placeholder="Start Time">
+                        <label for="toDate2">To:</label>
+                        <input type="date" id="toDate2" name="toDate">
+                        <input type="time" id="endTime2" name="endTime" placeholder="End Time">
+                        <input type="button" value="Calculate Rent" class="calculate-rent-button" onclick="calculateRent('fromDate2', 'toDate2', 'startTime2', 'endTime2', 25)">
+                    </form>
+                </div>
+            </div>
+
+            <div class="table-cell">
+                <div class="bike-info">
+                    <img src="splendorplusimage.png" alt="Bike 3">
+                    <h2>Hero Splendor Plus</h2>
+                    <ul>
+                        <li>Rental Price: $15/hour</li>
+                        <li>Top Speed: 90 Kmph</li>
+                        <li>Engine Capacity: 97.2 cc</li>
+                        <li>Mileage: 60 kmpl</li>
+                        <li>Transmission: 4 Speed Manual</li>
+                    </ul>
+                </div>
+                <div class="rental-info">
+                    <form id="rentForm3" class="rent-form" method="post" action="process_rental2.php">
+                        <label for="bikename">Name of Bike:</label>
+                        <input type="text" id="bike_name" name="bike_name">
+                        <label for="fromDate3">From:</label>
+                        <input type="date" id="fromDate3" name="fromDate">
+                        <input type="time" id="startTime3" name="startTime" placeholder="Start Time">
+                        <label for="toDate3">To:</label>
+                        <input type="date" id="toDate3" name="toDate">
+                        <input type="time" id="endTime3" name="endTime" placeholder="End Time">
+                        <input type="button" value="Calculate Rent" class="calculate-rent-button" onclick="calculateRent('fromDate3', 'toDate3', 'startTime3', 'endTime3', 15)">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
